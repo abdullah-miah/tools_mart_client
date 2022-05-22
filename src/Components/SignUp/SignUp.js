@@ -1,6 +1,5 @@
 import React from 'react';
 import {  useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -25,6 +24,9 @@ const SignUp = () => {
     // if(token){
     //     navigate('/appointment')
     // }
+    if(user || gUser){
+        navigate('/')
+    }
     if(error || gError ||UpdateError ){
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message || UpdateError?.message }</small></p>
     }
@@ -111,13 +113,13 @@ const SignUp = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
+                        <input className='btn btn-success w-full max-w-xs text-white' type="submit" value="Sign Up" />
                     </form>
                     <p><small>I have an Account? <Link className='text-primary' to="/login">please login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-success btn-outline"
                     >Continue with Google</button>
                 </div>
             </div>

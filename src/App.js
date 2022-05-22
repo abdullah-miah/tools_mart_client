@@ -6,6 +6,7 @@ import Login from './Components/Login/Login';
 import Home from './Components/Home/Home';
 import Blog from './Components/Blog/Blog';
 import SignUp from './Components/SignUp/SignUp';
+import Footer from './Components/Shared/Footer';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
 
       </Routes>
-      
+      <Footer></Footer>
     </div>
   );
 }
