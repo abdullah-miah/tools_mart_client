@@ -13,7 +13,7 @@ const Navbar = () => {
     <>
           <li><Link to='/'>Home</Link></li>
             <li><Link to='/blog'>Blog</Link></li>
-        <li>{user?<button onClick={logout} class="btn btn-ghost">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
+        <li>{user?<button onClick={logout} class="btn btn-ghost text-white text-xl">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
     </>
     return (
         <div style={{backgroundColor: '#d9edc6'}}>
