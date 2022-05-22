@@ -1,0 +1,62 @@
+[
+    {
+        "_id": 1,
+        "name": "Hard Point Saw",
+        "img": "https://dccf75d8gej24.cloudfront.net/images/products/04/040218805/95ED6CF9-6877-494A-A534-0A10037EEAB9-large.jpg",
+        "description": "Top quality hard point saw for general sawing in both hard and soft timbers.",
+        "min_Quantity": 100,
+        "available_Quantity": 1000,
+        "price": 80
+        
+      },
+    {
+        "_id": 2,
+        "name": "Wood Turning Chisel Set",
+        "img": "https://dccf75d8gej24.cloudfront.net/images/products/04/040611874/B8B54294-0008-409B-AB3E-05A9C8979C24-large.jpg",
+        "description": "An 8 piece set of professional quality wood turning chisels, perfect for use with Clarke's 'CWL' woodturning lathes for creating attractive.",
+        "min_Quantity": 50,
+        "available_Quantity": 500,
+        "price": 30
+        
+      },
+    {
+        "_id": 3,
+        "name": "Try Square Set",
+        "img": "https://dccf75d8gej24.cloudfront.net/images/products/04/040210724/AFB7538B-E4FB-4178-B5EF-B75E4E148219-large.jpg",
+        "description": "A handy three piece try square set, complete with try squares of three differing sizes, all manufactured from durable aluminium.",
+        "min_Quantity": 40,
+        "available_Quantity": 20,
+        "price": 80
+        
+      },
+    {
+        "_id": 4,
+        "name": "Wood Chisels 5 Piece Set",
+        "img": "https://dccf75d8gej24.cloudfront.net/images/products/04/040616885/5253CF36-3DCB-4809-936B-23B83E6DF506-large.jpg",
+        "description": "Top quality A hardwearing woodworkig chisel set in both hard and soft timbers.",
+        "min_Quantity": 100,
+        "available_Quantity": 1000,
+        "price": 80
+        
+      },
+    {
+        "_id": 5,
+        "name": "Mortice Gauge",
+        "img": "https://dccf75d8gej24.cloudfront.net/images/products/04/040611835/67C259B1-816C-4D02-8774-0B31A6B9D75D-large.jpg",
+        "description": "Top quality hard point saw gaue general cutting in both hard and soft timbers.",
+        "min_Quantity": 50,
+        "available_Quantity": 400,
+        "price": 25
+        
+      },
+    {
+        "_id": 6,
+        "name": "Wood Turning Lathe",
+        "img": "https://dccf75d8gej24.cloudfront.net/images/products/06/060610687/18ED286E-B569-4617-86A7-14A985EC5EA1-large.jpg",
+        "description": "The Clarke CWL1000B is a big lathe ideal for wood turning in the DIY workshop. The 1016mm distance between centres allows for turning longer spindles.",
+        "min_Quantity": 70,
+        "available_Quantity": 300,
+        "price": 70
+        
+      }
+]
