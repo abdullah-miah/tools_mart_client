@@ -18,19 +18,21 @@ const Purchase = () => {
       const handlePurchase =event=>{
           event.preventDefault()
           const quantity = event.target.quantity.value;
+          if(quantity>=min_Quantity){
+            alert('please', min_Quantity, 'order')
+          }
           const buyInfo ={
             img: img,
             porductName:name,
             productId:_id,
+            price: price,
             userName: user.displayName,
             userEmail: user.email,
             address: event.target.address.value,
             phone: event.target.phone.value,
             quantity,
           }
-          if(quantity>=min_Quantity){
-            alert('please', min_Quantity, 'order')
-          }
+          
           console.log(buyInfo);
           fetch('http://localhost:5000/orders', {
             method: 'POST',
@@ -64,7 +66,7 @@ const Purchase = () => {
   <input type="email" name='email' readOnly disabled value={user?.email} class="input input-bordered input-primary w-full max-w-xs mb-2" />
   <input type="text" name='address' required placeholder="Address" class="input input-bordered input-primary w-full max-w-xs mb-2" />
   <input type="text" name='phone' required placeholder="Phone no" class="input input-bordered input-primary w-full max-w-xs mb-2" />
-  <input type="text" name='quantity' required placeholder={min_Quantity} class="input input-bordered input-primary w-full max-w-xs mb-2" />
+  <input type="number" name='quantity' required placeholder='Minimum quantity' class="input input-bordered input-primary w-full max-w-xs mb-2" />
   <br/>
   <input type='submit' value='Purchase' className='btn btn-success mb-6 text-white'></input>
   </form>
