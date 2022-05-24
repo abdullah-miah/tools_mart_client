@@ -12,6 +12,21 @@ const MyOrders = () => {
         .then(data => setorders(data));
         }
     },[])
+    const handleDelete = id =>{
+        const proceed = window.confirm('Are you Sure');
+        if(proceed){
+       const url = `http://localhost:5000/dashboard/${id}`
+       fetch(url, {
+           method: 'DELETE'
+       }) 
+       .then(res => res.json())
+       .then(data =>{
+           console.log(data);
+           const remaining = orders.filter(order => order._id !== id);
+           setorders(remaining);
+       })
+    }
+    }
     return (
         <div>
             <h1>MyOrders:{orders.length}</h1>
@@ -42,11 +57,13 @@ const MyOrders = () => {
             <td className='text-center'>$ {order.price}</td>
             <td className='text-center'>  {order.quantity}</td>
             <td className='text-center'> $ {parseInt(order.quantity)*parseInt(order.price)}</td>
-            <td className='flex justify-center items-center'><button class="btn btn-circle btn-success btn-outline mt-4">
+            <td className='flex justify-center items-center'>
+                <button onClick={()=>handleDelete(order._id)}
+                 class="btn btn-circle btn-success btn-outline mt-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button></td>
              <td>
-             <button class="btn btn-warning btn-outline">Payment</button>
+             <button  class="btn btn-warning btn-outline">Payment</button>
                  </td>       
           </tr>)
       }
