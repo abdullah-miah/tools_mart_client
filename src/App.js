@@ -8,6 +8,7 @@ import Blog from './Components/Blog/Blog';
 import SignUp from './Components/SignUp/SignUp';
 import Footer from './Components/Shared/Footer';
 import PageNotFound from './Components/Shared/PageNotFound';
+import Purchase from './Components/Purchase/Purchase';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
+      <Route path='/purchase/:id' element={<Purchase></Purchase>}></Route>
       <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>

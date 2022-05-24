@@ -4,7 +4,7 @@ import ProductsCart from './ProductsCart';
 const Products = () => {
     const [products, setProducts]=useState([]);
     useEffect(()=>{
-        const url ='tools.json'
+        const url ='http://localhost:5000/product'
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
