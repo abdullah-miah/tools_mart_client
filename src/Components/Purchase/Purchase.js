@@ -23,7 +23,7 @@ const Purchase = () => {
           }
           const buyInfo ={
             img: img,
-            porductName:name,
+            productName:name,
             productId:_id,
             price: price,
             userName: user.displayName,

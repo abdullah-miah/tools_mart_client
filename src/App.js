@@ -10,6 +10,9 @@ import Footer from './Components/Shared/Footer';
 import PageNotFound from './Components/Shared/PageNotFound';
 import Purchase from './Components/Purchase/Purchase';
 import RequireAuth from './Components/Login/RequireAuth';
+import Dashboard from './Components/Dashboard/Dashboard';
+import MyOrders from './Components/Dashboard/MyOrders';
+import Review from './Components/Dashboard/Review';
 
 function App() {
   return (
@@ -27,6 +30,14 @@ function App() {
           <Purchase></Purchase>
         </RequireAuth>
       }></Route>
+      <Route path='/dashboard' element={
+        <RequireAuth>
+          <Dashboard></Dashboard>
+        </RequireAuth>
+      }>
+        <Route index element={<MyOrders></MyOrders>}></Route>
+        <Route path='review' element={<Review></Review>}></Route>
+      </Route>
       <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
