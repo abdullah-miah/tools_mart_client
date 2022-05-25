@@ -83,7 +83,7 @@ const addProduct = () => {
                        <br/>
                     </div>
                     <div className='mr-20'>
-                    <label className='text-xl '>Price</label>
+                    <label className='text-xl '>Short Description</label>
                        <br/>
                        <textarea name='description' class="textarea w-6/12 my-3 textarea-info" placeholder="Description"></textarea>
                        <br/>
