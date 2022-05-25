@@ -1,17 +1,35 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
     const [user, loading, error] = useAuthState(auth);
     const [orders, setorders]=useState([]);
+    const navigate = useNavigate();
     useEffect(()=>{
         if(user){
-            fetch(`http://localhost:5000/orders?userEmail=${user.email}`)
-        .then(res=> res.json())
-        .then(data => setorders(data));
+            fetch(`http://localhost:5000/orders?userEmail=${user.email}`,{
+              method: 'GET',
+              headers: {
+                  'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+              }
+          })
+              .then(res => {
+                  console.log('res', res);
+                  if (res.status === 401 || res.status === 403) {
+                      signOut(auth);
+                      localStorage.removeItem('accessToken');
+                      navigate('/');
+                  }
+                  return res.json()
+              })
+        .then(data => {
+          setorders(data)
+        });
         }
-    },[])
+    },[user])
     const handleDelete = id =>{
         const proceed = window.confirm('Are you Sure');
         if(proceed){
@@ -59,7 +77,7 @@ const MyOrders = () => {
             <td className='text-center'> $ {parseInt(order.quantity)*parseInt(order.price)}</td>
             <td className='flex justify-center items-center'>
                 <button onClick={()=>handleDelete(order._id)}
-                 class="btn btn-circle btn-success btn-outline mt-4">
+                 class="btn btn-circle btn-error btn-outline mt-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button></td>
              <td>
