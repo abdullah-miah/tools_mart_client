@@ -1,9 +1,56 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const Review = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const addReview =data=>{
+        data.preventDefault()
+      const name = data.target.name.value;
+      const email = data.target.email.value;
+      const description = data.target.description.value;
+      const ratings = data.target.ratings.value
+      const addReview={
+          name: name,
+          email:email,
+          description:description,
+          ratings :ratings,
+
+      }
+      fetch('http://localhost:5000/review', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify(addReview)
+    })
+    .then(res =>res.json())
+    .then(data => {
+        if(data.dataId){
+            toast.success('Review successfuly added')
+        }else{
+            toast.error('Review not added')
+        }
+    })
+    }
     return (
         <div>
             <h1> Review</h1>
+            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+           <form onSubmit={addReview}>
+           <input  name='name'  type="text" value={user.displayName} disabled class="input mb-4 w-full max-w-xs" />
+           <input  name='email' type="text" value={user.email} disabled class="input mb-4 w-full max-w-xs" />
+           <br/>
+
+           <textarea  name='description' class="textarea w-full my-3 textarea-info" placeholder="write reviews..."></textarea>
+           <input name='ratings' type="text" placeholder="Ratings" class="input input-bordered input-primary w-full max-w-xs" />
+           <input type='submit' className='btn btn-success btn-outline mt-4 w-full ' value='Add Review'></input>
+           </form>
+            </div>
+            </div>
         </div>
     );
 };
