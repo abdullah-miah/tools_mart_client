@@ -10,7 +10,7 @@ const CheckoutForm = ({ order }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
-    const { _id, price, img,productName } = order;
+    const { _id, price, img,productName, userEmail } = order;
 
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {
@@ -77,9 +77,13 @@ const CheckoutForm = ({ order }) => {
             //store payment on database
             const payment = {
                 order: _id,
-                transactionId: paymentIntent.id
+                transactionId: paymentIntent.id,
+                name:productName,
+                price: price,
+                img: img,
+                userEmail:userEmail
             }
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`http://localhost:5000/payment/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

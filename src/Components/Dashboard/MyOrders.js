@@ -75,10 +75,13 @@ const MyOrders = () => {
             <td className='text-center'>  {order.quantity}</td>
             <td className='text-center'> $ {parseInt(order.quantity)*parseInt(order.price)}</td>
             <td className='flex justify-center items-center'>
-                <button onClick={()=>handleDelete(order._id)}
-                 class="btn btn-circle btn-error btn-outline mt-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button></td>
+               {
+                   order.paid? 'Shipped': <button onClick={()=>handleDelete(order._id)}
+                   class="btn btn-circle btn-error btn-outline mt-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                      </button>
+               }
+               </td>
              <td>
              {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Payment</button></Link>}
                                     {(order.price && order.paid) && <div>
