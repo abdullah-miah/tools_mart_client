@@ -35,7 +35,8 @@ const ManageProducts = () => {
         <th className='text-center'>Product Name</th>
         <th className='text-center'>Avatar</th>
         <th className='text-center'>Price(P.U)</th>
-        <th className='text-center'>Quantity</th>
+        <th className='text-center'>Minimum Quantity</th>
+        <th className='text-center'>Availabel Quantity</th>
         <th className='text-center'>Remove</th>
         <th className='text-center'>Update</th>
       </tr>
@@ -52,6 +53,7 @@ const ManageProducts = () => {
             </div></td>
             <td className='text-center'>$ {product.price}</td>
             <td className='text-center'>  {product.min_Quantity}</td>
+            <td className='text-center'>  {product.available_Quantity}</td>
             <td className='flex justify-center items-center'>
                 <button onClick={()=>handleDelete(product._id)}
                  class="btn btn-circle btn-error btn-outline mt-4">
