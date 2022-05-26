@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 const Purchase = () => {
     const {id}=useParams();
@@ -18,9 +19,6 @@ const Purchase = () => {
       const handlePurchase =event=>{
           event.preventDefault()
           const quantity = event.target.quantity.value;
-          if(quantity>=min_Quantity){
-            alert('please', min_Quantity, 'order')
-          }
           const buyInfo ={
             img: img,
             productName:name,
@@ -32,8 +30,7 @@ const Purchase = () => {
             phone: event.target.phone.value,
             quantity,
           }
-          
-          console.log(buyInfo);
+         if(parseInt(quantity) >=parseInt(min_Quantity)){
           fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
@@ -43,9 +40,14 @@ const Purchase = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log('success', data);
+            console.log(data)
             event.target.reset();
+            toast.success(`Sucessfuly Added ${quantity}`)
         })
+         }else{
+          toast.error(`Please order up to ${min_Quantity}`);
+         }
+         
       }
 
     return (

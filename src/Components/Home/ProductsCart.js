@@ -1,9 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import useAdmin from '../../Hooks/useAdmin';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
-const ProductsCart = ({product}) => {
+const ProductsCart = ({product, }) => {
     const {name, img, description, price, min_Quantity,available_Quantity}= product;
     const navigate = useNavigate();
+    const [user] = useAuthState(auth);
+    const [admin] =useAdmin(user)
     const handelPurchase = (id)=>{
         navigate(`/purchase/${id}`)
       }
@@ -19,7 +24,7 @@ const ProductsCart = ({product}) => {
             <p>Available Quantity: {available_Quantity}</p>
             <p>Price:<span className='text-amber-500'> ${price}</span> (per unit)</p>
             <div class="card-actions justify-end">
-            <button onClick={()=>handelPurchase(product._id)} class="btn btn-success text-white w-full mt-8">Buy Now</button>
+            {admin? <input disabled className='btn btn-success w-full' type='submit' value='Admin'></input> :<button onClick={()=>handelPurchase(product._id)} class="btn btn-success text-white w-full mt-8">Buy Now</button>}
             </div>
         </div>
         </div> 

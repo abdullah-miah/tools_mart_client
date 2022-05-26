@@ -28,8 +28,9 @@ const Review = () => {
     })
     .then(res =>res.json())
     .then(data => {
-        if(data.dataId){
+        if(data){
             toast.success('Review successfuly added')
+            data.target.reset();
         }else{
             toast.error('Review not added')
         }
@@ -45,8 +46,8 @@ const Review = () => {
            <input  name='email' type="text" value={user.email} disabled class="input mb-4 w-full max-w-xs" />
            <br/>
 
-           <textarea  name='description' class="textarea w-full my-3 textarea-info" placeholder="write reviews..."></textarea>
-           <input name='ratings' type="text" placeholder="Ratings" class="input input-bordered input-primary w-full max-w-xs" />
+           <textarea required name='description' class="textarea w-full my-3 textarea-info" placeholder="write reviews..."></textarea>
+           <input required name='ratings' type="text" placeholder="Ratings" class="input input-bordered input-primary w-full max-w-xs" />
            <input type='submit' className='btn btn-success btn-outline mt-4 w-full ' value='Add Review'></input>
            </form>
             </div>

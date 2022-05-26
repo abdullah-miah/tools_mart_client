@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import useAdmin from '../../Hooks/useAdmin';
 import ProductsCart from './ProductsCart';
 
 const Products = () => {
     const [products, setProducts]=useState([]);
+    
     useEffect(()=>{
         const url ='http://localhost:5000/product'
         fetch(url)
@@ -17,7 +19,7 @@ const Products = () => {
                     products.slice(0,6).map(product =><ProductsCart
                     key={product._id}
                     product={product}
-                    
+                   
                     >
 
                     </ProductsCart>)
