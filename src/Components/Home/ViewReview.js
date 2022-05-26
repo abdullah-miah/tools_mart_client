@@ -16,7 +16,8 @@ useEffect(()=>{
     },[])
     return (
         <div>
-            <h1 className='text-3xl text-success text-center mt-12'>Customer Review</h1>
+            <h1 className='text-3xl stat-value  text-primary mt-20 text-center mt-12'>Customer Review</h1>
+            <p className='uppercase  text-red-400 text-center mb-14'>clients love</p>
         <div className=' grid grid-cols-1 grid-cols-3 mt-3 lg:mt-0'>
             {
                 reviews.slice(0,3).map(review=><ReviewCard

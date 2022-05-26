@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
                 <div className='mt-48' style={{color: '#095d7e'}}>
-                    <p className='text-4xl mb-8'>Everything here....</p>
+                    <p className='text-4xl mb-8 text-3xl text-green-400'>Wood & Tools All Here</p>
                     <h1 className='text-2xl '>Tools mart manufactured many mordern tools. Many nessecary tools available here. Wood maker love this equiepment.</h1>
                     <button class="btn btn-success mt-12 text-white">Get Started</button>
                 </div>
