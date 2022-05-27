@@ -1,8 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import useAdmin from '../../Hooks/useAdmin';
 
-const UsersRow = ({user,index, refetch}) => {
+const UsersRow = ({user,index, refetch, users}) => {
     const {email, role} =user;
+    const [admin] = useAdmin();
     const makeAdmin=()=>{
         fetch(`http://localhost:5000/user/admin/${email}`,{
             method:'PUT',
@@ -16,12 +18,29 @@ const UsersRow = ({user,index, refetch}) => {
             toast.success('Successfully add admin')
         })
     }
+    const handleDelete = id =>{
+        const proceed = window.confirm('Are you Sure');
+        if(proceed){
+       const url = `http://localhost:5000/deleteUsers/${id}`
+       fetch(url, {
+           method: 'DELETE'
+       }) 
+       .then(res => res.json())
+       .then(data =>{
+           console.log(data);
+        //    const remaining = user.filter(u => u._id !== id);
+        //    users(remaining);
+        refetch()
+        toast.success('User remove successfuly')
+       })
+    }
+    }
     return (
         <tr>
         <th>{index+1}</th>
         <td>{user.email}</td>
-        <td><button class="btn">Remove</button></td>
-        <td>{role!='admin' && <button onClick={makeAdmin} class="btn">Admin</button>}</td>
+        <td>{admin? '':<button onClick={()=>handleDelete(user._id)} class="btn">Remove</button>}</td>
+        <td>{role!='admin' && <button onClick={makeAdmin} class="btn">Make Admin</button>}</td>
       </tr>
     );
 };

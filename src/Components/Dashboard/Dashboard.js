@@ -12,7 +12,9 @@ const Dashboard = () => {
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
     {/* <!-- Page content here --> */}
-    <h1 className='text-3xl font-bold mt-12 text-success'>Welcome To Dashboard</h1>
+    {admin?<h1 className='text-3xl font-bold mt-12 text-success'>
+      Welcome To Dashboard <span className='text-xl text-secondary'>(Admin)</span></h1>
+    :<h1 className='text-3xl font-bold mt-12 text-success'>Welcome To Dashboard</h1>}
     <Outlet></Outlet>
     
   

@@ -6,7 +6,7 @@ const UpcomingProducts = () => {
         <div>
             <h1 className='text-center text-3xl font-bold mt-24 text-info'>UPCOMING INOVATION TOOLS MART </h1>
             <p className='text-center text-orange-400 text-xl mb-14 uppercase'>Tools mart Creation</p>
-            <div className='grid grid-cols-1 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 gap-4 lg:grid-cols-3'>
             <div>
                             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure><img src="https://dccf75d8gej24.cloudfront.net/images/products/04/040611830/D6CBC172-73AA-4991-A887-28B16736207B-large.jpg" alt="Shoes" /></figure>

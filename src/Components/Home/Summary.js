@@ -5,7 +5,7 @@ const Summary = () => {
         <div className='mt-14'>
             <h1 className='text-3xl text-center mt-20 text-info font-bold'>BUSINESS SUMMARY</h1>
             <p className='text-center text-orange-400 mb-20'>MILIONS OF CLIENT LOVE</p>
-            <div className='grid grid-cols-1 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
              <div>
                   <div class="card w-96 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">

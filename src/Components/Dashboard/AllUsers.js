@@ -13,6 +13,8 @@ const AllUsers = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+    
+
     return (
         <div>
             {/* <h1>All users:{users.length}</h1> */}
@@ -20,10 +22,10 @@ const AllUsers = () => {
   <table class="table w-full">
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>SL.NO</th>
+        <th>Email</th>
+        <th>Remove User</th>
+        <th>Make Admin</th>
       </tr>
     </thead>
     <tbody>
@@ -33,6 +35,7 @@ const AllUsers = () => {
         user={user}
         index={index}
         refetch={refetch}
+        users ={users}
         ></UsersRow>)
     }
     </tbody>

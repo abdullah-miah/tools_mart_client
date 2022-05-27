@@ -21,6 +21,7 @@ import RequireAdmin from './Components/Login/RequireAdmin';
 import ManageProducts from './Components/Dashboard/ManageProducts';
 import Payment from './Components/Dashboard/Payment';
 import MyProfile from './Components/Dashboard/MyProfile';
+import UpdateProduct from './Components/Dashboard/UpdateProduct';
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
         </RequireAdmin>}></Route>
         <Route path='manageproduct' element={<RequireAdmin>
           <ManageProducts></ManageProducts>
+        </RequireAdmin>}></Route>
+        <Route path='update/:id' element={<RequireAdmin>
+          <UpdateProduct></UpdateProduct>
         </RequireAdmin>}></Route>
       </Route>
       <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
