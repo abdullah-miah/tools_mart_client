@@ -24,6 +24,7 @@ import MyProfile from './Components/Dashboard/MyProfile';
 import UpdateProduct from './Components/Dashboard/UpdateProduct';
 import UpdatedProfile from './Components/Dashboard/UpdatedProfile';
 import ManageAllProducts from './Components/Dashboard/ManageAllProducts';
+import Portfolio from './Components/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/portfolio' element={<Portfolio/>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
       <Route path='/purchase/:id' element={
