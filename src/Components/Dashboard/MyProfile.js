@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const MyProfile = () => {
-    const [user, loading, error] = useAuthState(auth);
-    console.log(user);
-    return (
-        <div>
-            <h1>My Profile</h1>
-            <div class="hero min-h-screen bg-base-200">
-  <div class="hero-content flex-col lg:flex-row">
-    <img src={user.photoURL} class="max-w-sm rounded-lg shadow-2xl" />
+  const [users, setUsers]=useState([]);
+  const [user, loading, error] = useAuthState(auth);
+  useEffect(()=>{
+    if(user){
+      fetch(`http://localhost:5000/myprofile?email=${user.email}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+    }
+  },[user])
+    
+  return (
     <div>
-      <h1 class="text-5xl font-bold">{user.displayName}</h1>
-      <p class="py-6 text-xl">Email Adress: {user.email}</p>
-      <button class="btn btn-primary">Get Started</button>
+      
     </div>
-  </div>
-</div>
-        </div>
-    );
+  );
 };
 
 export default MyProfile;

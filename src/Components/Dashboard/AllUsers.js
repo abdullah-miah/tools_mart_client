@@ -4,17 +4,15 @@ import Loading from '../Shared/Loading';
 import UsersRow from './UsersRow';
 
 const AllUsers = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
-        method: 'GET',
-        headers:{
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }).then(res => res.json()));
-    if (isLoading) {
-        return <Loading></Loading>
+  const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/alluser', {
+    method: 'GET',
+    headers:{
+        // authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
-    
-
+}).then(res => res.json()));
+if (isLoading) {
+    return <Loading></Loading>
+}
     return (
         <div>
             {/* <h1>All users:{users.length}</h1> */}

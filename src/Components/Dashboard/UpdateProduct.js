@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const UpdateProduct = () => {
     const {id}=useParams();
@@ -28,7 +29,7 @@ const UpdateProduct = () => {
     }
     const handelUpdeted = e =>{
         e.preventDefault();
-        navigate('/dashboard')
+        navigate('/dashboard/manageproduct')
         const updateProduct = {
             price: e.target.price.value,
             min_Quantity: e.target.min_Quantity.value, 
@@ -43,6 +44,7 @@ const UpdateProduct = () => {
             },
             body : JSON.stringify(updateProduct)
         })
+        toast.success('Successfuly updated product')
     }
 
     return (
