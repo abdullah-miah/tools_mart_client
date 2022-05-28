@@ -46,7 +46,8 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h1>MyOrders:{orders.length}</h1>
+          <h1 className='text-2xl mt-5 font-bold text-center btn btn-outline mb-5'>MY ORDER</h1>
+            <h1 className='text-2xl mb-5'>MyOrders:{orders.length}</h1>
             <div class="overflow-x-auto">
   <table class="table w-full">
     <thead>

@@ -38,7 +38,7 @@ const Review = () => {
     }
     return (
         <div>
-            <h1> Review</h1>
+            <h1 className='text-2xl mt-5 font-bold text-center btn btn-outline mb-5'>ADD REVIEW</h1>
             <div class="card w-96 bg-base-100 shadow-xl">
             <div class="card-body">
            <form onSubmit={addReview}>

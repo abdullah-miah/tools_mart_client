@@ -60,8 +60,8 @@ const addProduct = () => {
     }
     
     return (
-        <div className='mt-12'>
-            <h1 className='mb-5'>Add product</h1>
+        <div className=''>
+            <h1 className='text-2xl mt-5 font-bold text-center btn btn-outline mb-5'>Add product</h1>
             <form onSubmit={AddproductHandle}>
                 <div className='grid grid-cols-1 lg:grid-cols-2 g-0'>
                     <div className='ml-20'>

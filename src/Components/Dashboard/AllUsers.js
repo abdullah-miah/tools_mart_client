@@ -15,7 +15,8 @@ if (isLoading) {
 }
     return (
         <div>
-            {/* <h1>All users:{users.length}</h1> */}
+          <h1 className='text-2xl mt-5 font-bold text-center btn btn-outline mb-5'>All Users</h1>
+            <h1 className=' mb-2 text-xl'>All users:{users.length}</h1>
             <div class="overflow-x-auto">
   <table class="table w-full">
     <thead>

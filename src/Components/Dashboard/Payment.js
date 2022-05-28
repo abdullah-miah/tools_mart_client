@@ -22,7 +22,7 @@ const Payment = () => {
     }
     return (
         <div>
-            <h1>Payment Information</h1>
+            <h1 className='text-2xl mt-5 font-bold text-center btn btn-outline mb-5'>PAYMENT INFORMATION</h1>
             <div class="card w-8/12 card-side bg-base-100 shadow-xl">
   <figure><img className='w-6/12' src={order.img} alt="Movie"/></figure>
   <div class="card-body">
@@ -32,7 +32,7 @@ const Payment = () => {
     <p>Total Amount: $ {parseInt(order.quantity)*parseInt(order.price)} </p>
   </div>
 </div>
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class=" mt-12 card w-96 bg-base-100 shadow-xl">
          <Elements stripe={stripePromise}>
                         <CheckoutForm order={order} />
                     </Elements>

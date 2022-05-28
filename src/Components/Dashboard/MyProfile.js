@@ -21,7 +21,7 @@ const MyProfile = () => {
     
   return (
     <div className='mt-8'>
-      <h1 className='text-2xl font-bold'>My profile</h1>
+      <h1 className='text-2xl font-bold text-center btn btn-outline'>My profile</h1>
       <div className='flex justify-center items-center h-screen'>
         {
           users.map(u=><ProfileDetails
