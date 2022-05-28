@@ -22,6 +22,8 @@ import ManageProducts from './Components/Dashboard/ManageProducts';
 import Payment from './Components/Dashboard/Payment';
 import MyProfile from './Components/Dashboard/MyProfile';
 import UpdateProduct from './Components/Dashboard/UpdateProduct';
+import UpdatedProfile from './Components/Dashboard/UpdatedProfile';
+import ManageAllProducts from './Components/Dashboard/ManageAllProducts';
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
         </RequireAuth>
       }>
         <Route path='order' element={<MyOrders></MyOrders>}></Route>
+        <Route path='updatedprofile/:id' element={<UpdatedProfile></UpdatedProfile>}></Route>
         <Route path='review' element={<Review></Review>}></Route>
         <Route index element={<MyProfile></MyProfile>}></Route>
         <Route path='payment/:id' element={<Payment></Payment>}></Route>
@@ -54,6 +57,9 @@ function App() {
         </RequireAdmin>}></Route>
         <Route path='manageproduct' element={<RequireAdmin>
           <ManageProducts></ManageProducts>
+        </RequireAdmin>}></Route>
+        <Route path='allorders' element={<RequireAdmin>
+          <ManageAllProducts></ManageAllProducts>
         </RequireAdmin>}></Route>
         <Route path='update/:id' element={<RequireAdmin>
           <UpdateProduct></UpdateProduct>
