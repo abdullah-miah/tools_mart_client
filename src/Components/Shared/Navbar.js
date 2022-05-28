@@ -21,8 +21,8 @@ const Navbar = () => {
         <li>{user?<button onClick={logout} class="btn btn-ghost text-white text-xl">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
     </>
     return (
-        <div style={{backgroundColor: '#d9edc6'}}>
-          <div class="navbar lg:px-14">
+        <div  style={{backgroundColor: '#d9edc6'}}>
+          <div class="navbar sticky top-0 lg:px-14">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">

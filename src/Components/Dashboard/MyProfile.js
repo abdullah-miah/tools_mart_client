@@ -8,7 +8,7 @@ const MyProfile = () => {
   const [user, loading, error] = useAuthState(auth);
   useEffect(()=>{
     if(user){
-      fetch(`http://localhost:5000/myprofile?email=${user.email}`,{
+      fetch(`https://limitless-everglades-10134.herokuapp.com/myprofile?email=${user.email}`,{
         method: 'GET',
               headers: {
                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`

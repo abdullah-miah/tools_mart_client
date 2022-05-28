@@ -8,7 +8,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L3WGJBAhzjGFSLF57XLmbe9Z9M4sjSWKDIs6ogPrXLlioMhrSvVEBrDv2H7dRwA0wYbI5XtOIGJWcZnOWwGd2iP00SyrCwk9f');
 const Payment = () => {
     const {id}=useParams();
-    const url = `http://localhost:5000/payment/${id}`;
+    const url = `https://limitless-everglades-10134.herokuapp.com/payment/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

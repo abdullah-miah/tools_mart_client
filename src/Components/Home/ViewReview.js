@@ -5,7 +5,7 @@ const ViewReview = () => {
     const [reviews , setReviews]= useState([]);
 
 useEffect(()=>{
-            fetch(`http://localhost:5000/clientReview`)
+            fetch(`https://limitless-everglades-10134.herokuapp.com/clientReview`)
               .then(res => {
                   return res.json()
               })
