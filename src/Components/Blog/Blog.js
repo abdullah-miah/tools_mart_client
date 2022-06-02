@@ -42,6 +42,7 @@ const Blog = () => {
                        state, it does not change this.</p>
             </div>
             <div>
+                {/* blog title */}
                 <h1 className='text-xl font-bold'>What is a unit test? Why should write unit tests?</h1>
                <p>Unit tests are typically automated tests
                     written and run by software developers
