@@ -1,7 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faYoutube,faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faYoutube,faFacebook,faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const ShortNavbar = () => {
     return (

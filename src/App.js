@@ -29,6 +29,7 @@ import ShortNavbar from './Components/Shared/ShortNavbar';
 
 function App() {
   return (
+    
     <div>
       <ShortNavbar></ShortNavbar>
       <Navbar></Navbar>
