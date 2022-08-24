@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 const UpcomingProducts = () => {
     return (
         <div>
-            <h1 className='text-center text-3xl font-bold mt-24 text-info'>UPCOMING INOVATION TOOLS MART </h1>
-            <p className='text-center text-orange-400 text-xl mb-14 uppercase'>Tools mart Creation</p>
+            <h1 className='text-center text-3xl font-bold mt-24 text-black'>UPCOMING INOVATION TOOLS MART </h1>
+            <p className='text-center text-gry-400 text-xl mb-4 uppercase'>Tools mart Creation</p>
+            <div className='flex justify-center items-center mb-8'>
+            <img src='https://www.aloktools.com/wp-content/uploads/2017/02/Ozar_O2-1.png'></img>
+            </div>
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-3'>
             <div>
                             <div class="card w-96 bg-base-100 shadow-xl">

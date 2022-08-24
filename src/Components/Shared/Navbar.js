@@ -18,32 +18,38 @@ const Navbar = () => {
             {
               user && <li><Link to='/dashboard'>Dashboard</Link></li>
             }
-        <li>{user?<button onClick={logout} class="btn btn-ghost text-white text-xl">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
+        <li>{user?<button onClick={logout} class="btn btn-ghost text-xl">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
     </>
     return (
-        <div  style={{backgroundColor: '#d9edc6'}}>
+        <div  style={{backgroundColor: '#FFFFFF'}}>
           <div class="navbar sticky top-0 lg:px-14">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabindex="0" class="menu menu-compact  dropdown-content mt-3 p-2 shadow text-black rounded-box w-52">
               {ItemsMenu}
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-xl">Tools Mart</a>
+          <a class="btn btn-ghost normal-case text-xl">Tools <span className='text-3xl font-bold text-red-500 italic '>.Mart</span></a>
         </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal p-0 text-xl text-bold">
+        {/* <div class=" hidden lg:flex ">
+          <ul class="menu menu-horizontal text-xl font-bold p-0 text-xl text-bold">
           {ItemsMenu}
             
           </ul>
-        </div>
+        </div> */}
         <div className='navbar-end'>
         <label for="my-drawer-2" tabindex="1" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
+            <div class=" hidden lg:flex ">
+          <ul class="menu menu-horizontal text-xl font-bold p-0 text-xl text-bold">
+          {ItemsMenu}
+            
+          </ul>
+        </div>
         </div>
       </div>
         </div>

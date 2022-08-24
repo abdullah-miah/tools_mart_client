@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
+import Carosual from './Carosual';
 import Expart from './Expart';
 import Products from './Products';
 import Summary from './Summary';
@@ -9,7 +10,8 @@ import ViewReview from './ViewReview';
 const Home = () => {
     return (
         <div className='lg:px-14'>
-                <Banner></Banner>
+                {/* <Banner></Banner> */}
+                <Carosual/>
                 <Products></Products>
                 <UpcomingProducts></UpcomingProducts>
                 <Summary></Summary>

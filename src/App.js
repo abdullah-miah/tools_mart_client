@@ -25,10 +25,12 @@ import UpdateProduct from './Components/Dashboard/UpdateProduct';
 import UpdatedProfile from './Components/Dashboard/UpdatedProfile';
 import ManageAllProducts from './Components/Dashboard/ManageAllProducts';
 import Portfolio from './Components/Portfolio/Portfolio';
+import ShortNavbar from './Components/Shared/ShortNavbar';
 
 function App() {
   return (
     <div>
+      <ShortNavbar></ShortNavbar>
       <Navbar></Navbar>
 
       {/* React Router */}

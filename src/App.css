@@ -13,16 +13,15 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#caption{
+  background: rgba(0, 0, 0, 0.5);
+  width: 500px;
+  height: 150px;
+  margin: 0 auto;
 }
+/* #cardBtn{
+  background-color: rgba(0, 0, 0, 0.805);
+} */
 
 .App-link {
   color: #61dafb;
