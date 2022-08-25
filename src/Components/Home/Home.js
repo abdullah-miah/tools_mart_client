@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import Carosual from './Carosual';
+import ChooseUs from './ChooseUs';
 import Contact from './Contact';
 import Expart from './Expart';
 import Products from './Products';
@@ -16,7 +17,7 @@ const Home = () => {
                 <Products></Products>
                 <UpcomingProducts></UpcomingProducts>
                 <Contact></Contact>
-                
+                <ChooseUs></ChooseUs>
                 <ViewReview></ViewReview>
                 <Expart></Expart>
         </div>

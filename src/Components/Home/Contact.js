@@ -56,14 +56,14 @@ const Contact = () => {
             <div className='grid grid-cols-1 lg:grid-cols-4 p-12'>
              <div className='text-center '>
               <h2 className='mb-4 text-4xl font-bold text-orange-600'>
-                {CounterOn && <CountUp start={20} end={80}></CountUp>} +
+                {CounterOn && <CountUp start={20} end={80}></CountUp>}+
               </h2>
               <h1 className='text-black text-2xl font-bold'>World Wide</h1>
              </div>
              <div className='text-center '>
               <h2 className='mb-4 text-4xl font-bold text-orange-600'>
                 
-              {CounterOn && <CountUp start={450} end={500}></CountUp>} +
+              {CounterOn && <CountUp start={450} end={500}></CountUp>}+
                 
               </h2>
               <h1 className='text-black text-2xl font-bold'>Customers Globally</h1>
@@ -71,15 +71,14 @@ const Contact = () => {
              <div className='text-center '>
               <h2 className='mb-4 text-4xl font-bold text-orange-600'>
                 
-              {CounterOn && <CountUp start={70} end={99}></CountUp>} %
+              {CounterOn && <CountUp start={70} end={99}></CountUp>}%
                 
                 </h2>
               <h1 className='text-black text-2xl font-bold'>OnTime Delivery</h1>
              </div>
              <div className='text-center '>
               <h2 className='mb-4 text-4xl font-bold text-orange-600'>
-              {CounterOn && <CountUp start={50} end={112}></CountUp>}
-                k</h2>
+              {CounterOn && <CountUp start={50} end={112}></CountUp>}k</h2>
               <h1 className='text-black text-2xl font-bold'>Total Sells</h1>
              </div>
              
