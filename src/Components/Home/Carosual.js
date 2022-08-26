@@ -1,5 +1,8 @@
 import React from 'react';
 import 'tw-elements';
+import img1 from "../../image/img-1-resize.jpg";
+import img2 from "../../image/img-3_resize.jpg"
+import img3 from "../../image/main_resize.jpg"
 
 const Carosual = () => {
     return (
@@ -30,7 +33,7 @@ const Carosual = () => {
   <div class="carousel-inner relative w-full overflow-hidden">
     <div class="carousel-item active relative float-left w-full">
       <img
-        src="https://www.simpleimageresizer.com/_uploads/photos/39090108/img-1_2_1200x480.jpg"
+        src={img2}
         class="block w-full"
         alt="..."
       />
@@ -45,7 +48,7 @@ const Carosual = () => {
     </div>
     <div class="carousel-item relative float-left w-full">
       <img
-        src="https://www.simpleimageresizer.com/_uploads/photos/39090108/img-2_1200x480.jpg"
+        src={img1}
         class="block w-full"
         alt="..."
       />
@@ -60,7 +63,7 @@ const Carosual = () => {
     </div>
     <div class="carousel-item relative float-left w-full">
       <img
-        src="https://www.simpleimageresizer.com/_uploads/photos/39090108/img-3_1200x480.jpg"
+        src={img3}
         class="block w-full"
         alt="..."
       />

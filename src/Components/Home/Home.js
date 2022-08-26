@@ -4,6 +4,7 @@ import Carosual from './Carosual';
 import ChooseUs from './ChooseUs';
 import Contact from './Contact';
 import Expart from './Expart';
+import GlobalMap from './GlobalMap';
 import Products from './Products';
 import Summary from './Summary';
 import UpcomingProducts from './UpcomingProducts';
@@ -18,6 +19,7 @@ const Home = () => {
                 <UpcomingProducts></UpcomingProducts>
                 <Contact></Contact>
                 <ChooseUs></ChooseUs>
+                <GlobalMap></GlobalMap>
                 <ViewReview></ViewReview>
                 <Expart></Expart>
         </div>

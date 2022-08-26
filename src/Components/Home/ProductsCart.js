@@ -4,7 +4,7 @@ import useAdmin from '../../Hooks/useAdmin';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus} from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus,faUser} from '@fortawesome/free-solid-svg-icons'
 import {  } from '@fortawesome/free-brands-svg-icons'
 
 const ProductsCart = ({product, }) => {
@@ -27,7 +27,10 @@ const ProductsCart = ({product, }) => {
             <p>Available Quantity: {available_Quantity}</p>
             <p>Price:<span className='text-amber-500'> ${price}</span> (per unit)</p>
             <div class="card-actions justify-end">
-            {admin? <input disabled className='btn w-full' type='submit' value='Admin'></input> :
+            {admin? <a disabled href='#' className='btn  w-full '> 
+            <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+           <span className='ml-2'>Admin</span></a>
+             :
             <button id='cardBtn' onClick={()=>handelPurchase(product._id)} class="btn bg-black text-white w-full mt-8">
                 <FontAwesomeIcon className='mr-2' icon={faCartPlus} />
                 Buy Now</button>}
