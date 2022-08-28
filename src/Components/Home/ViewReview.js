@@ -34,7 +34,7 @@ useEffect(()=>{
         <div className='flex justify-center items-center'>
         <button className='btn mt-4 bg-black'><a className='uppercase' href='#'>Become our partner now</a></button>
         </div>
-        <div className='flex justify-between items-center p-8 rounded-md mt-8 bg-black' >
+        <div className='flex justify-between items-center p-8 rounded-md mt-20 bg-black' >
             <div>
                 <h1 className='uppercase text-white text-2xl font-bold'>The Leading manufacturer of Application specific tools. </h1>
             </div>
