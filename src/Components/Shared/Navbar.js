@@ -21,7 +21,7 @@ const Navbar = () => {
         <li>{user?<button onClick={logout} class="btn btn-ghost text-xl">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
     </>
     return (
-        <div  style={{backgroundColor: '#FFFFFF'}}>
+        <div className='sticky top-0 z-50 scroll-smooth'  style={{backgroundColor: '#FFFFFF'}}>
           <div class="navbar sticky top-0 lg:px-14">
         <div class="navbar-start">
           <div class="dropdown">
