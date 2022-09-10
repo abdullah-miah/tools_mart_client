@@ -3,6 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import {FontAwesomeIcon}from "@fortawesome/react-fontawesome"
+import {faSackDollar, 
+        faCartShopping, 
+        faSpinner, 
+        faTruck,
+         faTrash,
+          faCreditCard,
+          faCartPlus
+        }from "@fortawesome/free-solid-svg-icons"
 
 const MyOrders = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -47,7 +56,18 @@ const MyOrders = () => {
     return (
         <div>
           <h1 className='text-2xl mt-5 font-bold text-center btn btn-outline mb-5'>MY ORDER</h1>
-            <h1 className='text-2xl mb-5'>MyOrders:{orders.length}</h1>
+           {/* order summery  */}
+            <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8'>
+              <div className='bg-sky-400 text-white rounded-md flex p-4 items-center'>
+              <FontAwesomeIcon className='text-3xl ml-2' icon={faCartPlus}></FontAwesomeIcon> 
+              <h1 className='p-4 text-xl '>Active orders: {orders.length}</h1>
+              </div>
+              <div className='bg-orange-400 text-white rounded-md flex p-4 items-center'>
+              <FontAwesomeIcon className='text-3xl ml-2' icon={faSpinner}></FontAwesomeIcon> 
+               <h1 className='p-4 text-xl'>Pending orders: {orders.length}
+               </h1>
+              </div>
+            </div>
             <div class="overflow-x-auto">
   <table class="table w-full">
     <thead>
@@ -58,8 +78,8 @@ const MyOrders = () => {
         <th className='text-center'>Price(P.U)</th>
         <th className='text-center'>Quantity</th>
         <th className='text-center'>Total Amount</th>
-        <th className='text-center'>Order Cancel</th>
-        <th className='text-center'>Status</th>
+        <th className='text-center'>Order status</th>
+        <th className='text-center'>Payment Status</th>
       </tr>
     </thead>
     <tbody>
@@ -77,16 +97,18 @@ const MyOrders = () => {
             <td className='text-center'> $ {parseInt(order.quantity)*parseInt(order.price)}</td>
             <td className='flex justify-center items-center'>
                {
-                   order.paid? 'Shipped': <button onClick={()=>handleDelete(order._id)}
-                   class="btn btn-circle btn-error btn-outline mt-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                   order.paid? <td> <FontAwesomeIcon className='text-2xl text-green-400' icon={faTruck} /></td>: <button onClick={()=>handleDelete(order._id)}
+                   class=" mt-4">
+                      <FontAwesomeIcon className='text-3xl text-red-400' icon={faTrash}/>
                       </button>
                }
                </td>
              <td>
-             {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Payment</button></Link>}
+             {(order.price && !order.paid) && <Link className='text-2xl text-sky-400' to={`/dashboard/payment/${order._id}`}><FontAwesomeIcon icon={faCreditCard}/> Payment</Link>}
                                     {(order.price && order.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
+                                        <p><span className='text-success text-2xl'>
+                                          <FontAwesomeIcon className='mr-2' icon={faSackDollar}></FontAwesomeIcon>
+                                          Paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
                                     </div>}
                  </td>       

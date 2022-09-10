@@ -1,5 +1,5 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -20,9 +20,20 @@ const Navbar = () => {
             }
         <li>{user?<button onClick={logout} class="btn btn-ghost text-xl">Sign Out</button>:<Link to='/login'>Login</Link>}</li>
     </>
+    const [navbar, setNavbar] = useState(false);
+    const changeBackground =()=>{
+      if(window.scrollY >= 80){
+        setNavbar(true);
+      }else{
+        setNavbar(false);
+      }
+    }
+    window.addEventListener('scroll', changeBackground);
+    
+
     return (
-        <div className='sticky top-0 z-50 scroll-smooth'  style={{backgroundColor: '#FFFFFF'}}>
-          <div class="navbar sticky top-0 lg:px-14">
+        <div className={ navbar ? 'sticky scroll-bg top-0 z-50 scroll-smooth': 'navbar-bg'}>
+          <div class="navbar lg:px-14">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">

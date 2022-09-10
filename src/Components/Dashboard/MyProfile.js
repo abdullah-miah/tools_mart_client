@@ -6,6 +6,7 @@ import ProfileDetails from './ProfileDetails';
 const MyProfile = () => {
   const [users, setUsers]=useState([]);
   const [user, loading, error] = useAuthState(auth);
+  console.log(user);
   useEffect(()=>{
     if(user){
       fetch(`https://limitless-everglades-10134.herokuapp.com/myprofile?email=${user.email}`,{
@@ -22,12 +23,11 @@ const MyProfile = () => {
   return (
     <div className='mt-8'>
       <h1 className='text-2xl font-bold text-center btn btn-outline'>My profile</h1>
-      <div className='flex justify-center items-center h-screen'>
+      <div className='h-screen mt-4'>
         {
           users.map(u=><ProfileDetails
           key={user._id}
           u={u}
-          user={user}
           ></ProfileDetails>)
         }
       </div>
