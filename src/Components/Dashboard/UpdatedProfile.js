@@ -33,7 +33,7 @@ const UpdatedProfile = () => {
                     education: education  
                 }
                 // send to your database 
-                fetch(`https://limitless-everglades-10134.herokuapp.com/updatedProfile/${id}`, {
+                fetch(`http://localhost:5000/updatedProfile/${id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

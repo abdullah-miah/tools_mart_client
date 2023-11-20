@@ -12,7 +12,7 @@ const Purchase = () => {
     const [products, setProducts] =useState({});
     const {name, _id, img, description, price, min_Quantity, available_Quantity}=products;
     useEffect(()=>{
-        const url =`https://limitless-everglades-10134.herokuapp.com/purchase/${id}`; 
+        const url =`http://localhost:5000/purchase/${id}`; 
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data));
@@ -33,7 +33,7 @@ const Purchase = () => {
             quantity,
           }
          if(parseInt(quantity) >=parseInt(min_Quantity)){
-          fetch('https://limitless-everglades-10134.herokuapp.com/orders', {
+          fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

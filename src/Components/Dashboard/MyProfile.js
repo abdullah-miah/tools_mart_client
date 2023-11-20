@@ -9,7 +9,7 @@ const MyProfile = () => {
   console.log(user);
   useEffect(()=>{
     if(user){
-      fetch(`https://limitless-everglades-10134.herokuapp.com/myprofile?email=${user.email}`,{
+      fetch(`http://localhost:5000/myprofile?email=${user.email}`,{
         method: 'GET',
               headers: {
                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`

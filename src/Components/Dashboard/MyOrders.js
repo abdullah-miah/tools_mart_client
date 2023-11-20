@@ -19,7 +19,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(()=>{
         if(user){
-            fetch(`https://limitless-everglades-10134.herokuapp.com/orders?userEmail=${user.email}`,{
+            fetch(`http://localhost:5000/orders?userEmail=${user.email}`,{
               method: 'GET',
               headers: {
                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -41,7 +41,7 @@ const MyOrders = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you Sure');
         if(proceed){
-       const url = `https://limitless-everglades-10134.herokuapp.com/dashboard/${id}`
+       const url = `http://localhost:5000/dashboard/${id}`
        fetch(url, {
            method: 'DELETE'
        }) 

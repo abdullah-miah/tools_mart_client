@@ -9,7 +9,7 @@ const Products = () => {
     const [products, setProducts]=useState([]);
     
     useEffect(()=>{
-        const url ='https://limitless-everglades-10134.herokuapp.com/product'
+        const url ='http://localhost:5000/product'
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))

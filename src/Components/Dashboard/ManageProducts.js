@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const [products, setProducts]=useState([]);
     const navigate = useNavigate();
     useEffect(()=>{
-        const url ='https://limitless-everglades-10134.herokuapp.com/product'
+        const url ='http://localhost:5000/product'
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
@@ -14,7 +14,7 @@ const ManageProducts = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you Sure');
         if(proceed){
-       const url = `https://limitless-everglades-10134.herokuapp.com/dashboard/${id}`
+       const url = `http://localhost:5000/dashboard/${id}`
        fetch(url, {
            method: 'DELETE'
        }) 

@@ -35,7 +35,7 @@ const addProduct = () => {
                     price: price  
                 }
                 // send to your database 
-                fetch('https://limitless-everglades-10134.herokuapp.com/products', {
+                fetch('http://localhost:5000/products', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -6,7 +6,7 @@ const UsersRow = ({user,index, refetch, users}) => {
     const {email, role} =user;
     const [admin] = useAdmin();
     const makeAdmin=()=>{
-        fetch(`https://limitless-everglades-10134.herokuapp.com/user/admin/${email}`,{
+        fetch(`http://localhost:5000/user/admin/${email}`,{
             method:'PUT',
             headers:{
                 authorization: `Beares ${localStorage.getItem('accessToken')}`
@@ -21,7 +21,7 @@ const UsersRow = ({user,index, refetch, users}) => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you Sure');
         if(proceed){
-       const url = `https://limitless-everglades-10134.herokuapp.com/deleteUsers/${id}`
+       const url = `http://localhost:5000/deleteUsers/${id}`
        fetch(url, {
            method: 'DELETE'
        }) 

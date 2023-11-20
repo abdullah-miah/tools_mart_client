@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, img,productName, userEmail } = order;
 
     useEffect(() => {
-        fetch('https://limitless-everglades-10134.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const CheckoutForm = ({ order }) => {
                 img: img,
                 userEmail:userEmail
             }
-            fetch(`https://limitless-everglades-10134.herokuapp.com/payment/${_id}`, {
+            fetch(`http://localhost:5000/payment/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
