@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const [products, setProducts]=useState([]);
     const navigate = useNavigate();
     useEffect(()=>{
-        const url ='http://localhost:5000/product'
+        const url ='https://tools-mart-server.vercel.app/product'
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
@@ -14,7 +14,7 @@ const ManageProducts = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you Sure');
         if(proceed){
-       const url = `http://localhost:5000/dashboard/${id}`
+       const url = `https://tools-mart-server.vercel.app/dashboard/${id}`
        fetch(url, {
            method: 'DELETE'
        }) 

@@ -1,16 +1,16 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const ManageAllProducts = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user,] = useAuthState(auth);
     const [orders, setorders]=useState([]);
     const navigate = useNavigate();
     useEffect(()=>{
         if(user){
-            fetch(`http://localhost:5000/ordersAll`,{
+            fetch(`https://tools-mart-server.vercel.app/ordersAll`,{
               method: 'GET',
               headers: {
                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const ManageAllProducts = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you Sure');
         if(proceed){
-       const url = `http://localhost:5000/dashboard/${id}`
+       const url = `https://tools-mart-server.vercel.app/dashboard/${id}`
        fetch(url, {
            method: 'DELETE'
        }) 
@@ -69,7 +69,7 @@ const ManageAllProducts = () => {
             <td>{order.productName}</td>
             <td><div class="avatar">
             <div class="w-14 rounded-xl">
-                <img src={order.img} />
+                <img alt='' src={order.img} />
             </div>
             </div></td>
             <td className='text-center'>$ {order.price}</td>

@@ -33,7 +33,7 @@ const UpdatedProfile = () => {
                     education: education  
                 }
                 // send to your database 
-                fetch(`http://localhost:5000/updatedProfile/${id}`, {
+                fetch(`https://tools-mart-server.vercel.app/updatedProfile/${id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

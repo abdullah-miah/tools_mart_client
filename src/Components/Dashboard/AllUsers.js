@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import UsersRow from './UsersRow';
 
 const AllUsers = () => {
-  const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/alluser', {
+  const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://tools-mart-server.vercel.app/alluser', {
     method: 'GET',
     headers:{
         // authorization: `Bearer ${localStorage.getItem('accessToken')}`

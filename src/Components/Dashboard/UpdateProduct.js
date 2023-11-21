@@ -8,7 +8,7 @@ const UpdateProduct = () => {
     const [products, setProducts]= useState([])
     const {name, _id, img, description, price, min_Quantity, available_Quantity}=products;
     useEffect(()=>{
-        const url =`http://localhost:5000/purchase/${id}`; 
+        const url =`https://tools-mart-server.vercel.app/purchase/${id}`; 
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data));
@@ -36,7 +36,7 @@ const UpdateProduct = () => {
             available_Quantity: e.target.available_Quantity.value 
           };
           e.target.reset();
-          const url =`http://localhost:5000/updatedProducts/${id}`;  
+          const url =`https://tools-mart-server.vercel.app/updatedProducts/${id}`;  
           fetch(url, {
             method: 'PUT',
             headers:{

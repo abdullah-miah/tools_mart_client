@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, img,productName, userEmail } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://tools-mart-server.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const CheckoutForm = ({ order }) => {
                 img: img,
                 userEmail:userEmail
             }
-            fetch(`http://localhost:5000/payment/${_id}`, {
+            fetch(`https://tools-mart-server.vercel.app/payment/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

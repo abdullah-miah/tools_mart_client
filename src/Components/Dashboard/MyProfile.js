@@ -9,7 +9,7 @@ const MyProfile = () => {
   console.log(user);
   useEffect(()=>{
     if(user){
-      fetch(`http://localhost:5000/myprofile?email=${user.email}`,{
+      fetch(`https://tools-mart-server.vercel.app/myprofile?email=${user.email}`,{
         method: 'GET',
               headers: {
                   'authorization': `Bearer ${localStorage.getItem('accessToken')}`

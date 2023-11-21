@@ -6,7 +6,7 @@ const ViewReview = () => {
     const [reviews , setReviews]= useState([]);
 
 useEffect(()=>{
-            fetch(`http://localhost:5000/clientReview`)
+            fetch(`https://tools-mart-server.vercel.app/clientReview`)
               .then(res => {
                   return res.json()
               })
@@ -19,7 +19,7 @@ useEffect(()=>{
         <div>
             <h1 className='text-3xl text-black mt-12 text-center mt-12'>Client Testimonials</h1>
             <div className='flex justify-center items-center'>
-                <img src={tinypicred}/>
+                <img alt='' src={tinypicred}/>
             </div>
             <p className='text-center text-black'>We have worked with hundreds of different clients around the globe. Check what a selection of them have to say about us.</p>
         <div className=' grid grid-cols-1 lg:grid-cols-3 gap-4 lg:mt-0'>
